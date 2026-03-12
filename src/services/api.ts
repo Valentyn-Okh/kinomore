@@ -149,7 +149,6 @@ class MovieApiService {
     }
   }
 
-  // Get movie genres
   async getGenres(): Promise<Genre[]> {
     try {
       const response: AxiosResponse<{ genres: Genre[] }> = await this.api.get('/genre/movie/list');
@@ -160,7 +159,6 @@ class MovieApiService {
     }
   }
 
-  // Get person details
   async getPersonDetails(id: string): Promise<Person> {
     try {
       const response: AxiosResponse<Person> = await this.api.get(`/person/${id}`);
@@ -171,7 +169,6 @@ class MovieApiService {
     }
   }
 
-  // Get similar movies
   async getSimilarMovies(id: string, page: number = 1): Promise<ApiResponse<Movie>> {
     try {
       const response: AxiosResponse<ApiResponse<Movie>> = await this.api.get(`/movie/${id}/similar`, {
@@ -184,7 +181,6 @@ class MovieApiService {
     }
   }
 
-  // Get movie recommendations
   async getRecommendations(id: string, page: number = 1): Promise<ApiResponse<Movie>> {
     try {
       const response: AxiosResponse<ApiResponse<Movie>> = await this.api.get(`/movie/${id}/recommendations`, {
